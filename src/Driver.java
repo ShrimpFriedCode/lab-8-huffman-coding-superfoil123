@@ -18,13 +18,13 @@
 public class Driver {
   public static void main(String[] args) {
     System.out.println(Constants.TITLE);
-    /*String text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    String text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
         + "bbbbbbbbbbbbbb"
         + "cccccccccccc"
         + "ddddddddddddddddddddd" 
         + "eeeeeeeee"
         + "fffff";
-        */
+
      //String text = Util.loadFile(Constants.ALICE);
      //String text = Util.loadFile(Constants.MOBY_DICK);
     //String text = Util.loadFile("callow.txt");
