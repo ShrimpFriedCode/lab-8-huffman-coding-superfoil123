@@ -18,14 +18,16 @@
 public class Driver {
   public static void main(String[] args) {
     System.out.println(Constants.TITLE);
-    String text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    /*String text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
         + "bbbbbbbbbbbbbb"
         + "cccccccccccc"
         + "ddddddddddddddddddddd" 
         + "eeeeeeeee"
         + "fffff";
-    // String text = Util.loadFile(Constants.ALICE);
-    // String text = Util.loadFile(Constants.MOBY_DICK);
+        */
+     //String text = Util.loadFile(Constants.ALICE);
+     //String text = Util.loadFile(Constants.MOBY_DICK);
+    //String text = Util.loadFile("callow.txt");
     
     System.out.println();
     System.out.println("The original text has " + text.length() + " characters.");
@@ -38,6 +40,10 @@ public class Driver {
     System.out.println("The savings is " + 
         (text.length() * Constants.BITESIZE - bits.length()) + " bits.");
     String packing = zipper.compress(bits);
+    long encode = bits.length();
+    long decode = text.length() * Constants.BITESIZE;
+    final double per =  (1 - ((double) encode / decode)) * 100;
+    System.out.println("The percentage of bits saved is " + per + "%.");
     System.out.println("The compressed text is encoded in " + packing.length() + " characters.");
     System.out.println("The savings is " + 
         (text.length() - packing.length()) + " characters.");    
