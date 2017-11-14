@@ -101,6 +101,8 @@ public class HuffmanTree {
   public char decodeChar(String bits) throws DecodeException {
     ArrayList<Integer> path = new ArrayList<Integer>();
 
+    char k = '\0';
+
     for(int i = 0; i < bits.length(); i++){//convert string into path we will take on tree
       path.add(Integer.parseInt(String.valueOf(bits.charAt(i))));
     }//dwt
@@ -108,19 +110,33 @@ public class HuffmanTree {
     Node curr = root;
 
     for(int i : path){
+      k = curr.key;
+
       if(i == 0){//if 0, go left
-        curr = curr.left;
+        if(curr.left == null){
+          //do nothing;
+        }
+        else {
+          curr = curr.left;
+          k = curr.key;
+        }
       }
       else{//must be , go right
-        curr = curr.right;
+        if(curr.right == null){
+          //do nothing
+        }
+        else {
+          curr = curr.right;
+          k = curr.key;
+        }
       }
     }//dw
 
-    if(curr.key == '\0'){
+    if(k == '\0'){
       throw new DecodeException(bits);
     }
     else{
-      return curr.key;
+      return k;
     }//dw
 
   }
